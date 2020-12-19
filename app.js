@@ -4,7 +4,7 @@ var port = process.env.PORT || 3000;
 const exec = require('child_process').exec;
 app.get('/', (req, res) => res.send("Hello world1"));
 app.get('/test', (req, res) => res.send("Hello world"));
-app.get('/test/git', (req, res) => res.send("Hello world2"));
+app.get('/test/git', (req, res) => res.send("Hello world3"));
 app.get('/test/git/version', (req, res) => 
 {
     exec(`git --version`, function(error, stdout, stderr){
