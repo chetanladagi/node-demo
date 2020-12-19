@@ -20,7 +20,7 @@ app.get('/test/git/version', (req, res) =>
 
 app.get('/test/git/clone', (req, res) => 
 {
-    exec(`mkdir demo && cd demo && git clone https://karthik-d-n:anuradha8490@github.com/aryabot-phamax/ariya-client.git`, function(error, stdout, stderr){
+    exec(`rm -rf demo && mkdir demo && cd demo && git clone https://karthik-d-n:anuradha8490@github.com/aryabot-phamax/ariya-client.git`, function(error, stdout, stderr){
         if(error)
             {
                 res.send({message:stderr});
