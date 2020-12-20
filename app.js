@@ -20,15 +20,18 @@ app.get('/test/git/version', (req, res) =>
 
 app.get('/test/git/clone', (req, res) => 
 {
-    exec(`rm -rf demo && mkdir demo && cd demo && git clone https://karthik-d-n:anuradha8490@github.com/aryabot-phamax/ariya-client.git`, function(error, stdout, stderr){
-        if(error)
-            {
-                res.send({message:stderr});
-            }
-            else{
-                res.send({message:stdout});
-            }
-      });
+    exec(`cd deploy && sh build.sh`, function(error1, stdout1, stderr1){
+        if(error1)
+        {
+            res.send({message:stderr1});
+        }
+        else
+        {
+            res.send({message:stdout1});
+        }
+    })
+            
+ 
 });
 
 app.listen(port, ()=>console.log('server is in 3000'));
